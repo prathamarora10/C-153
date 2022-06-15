@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="Movement.js"></script>
+
+</head>
+
+<body>
+  <a-scene background="color:#026F90">
+
+    <a-entity id="look" look-controls camera position="0 3 7"></a-entity>
+
+    <!--Asset Management-->
+    <a-assets timeout="10000">
+      <a-asset-item id="island" src="models/treasure_island_model/scene.gltf"></a-asset-item>
+
+      <a-asset-item id="diver" src="models/5-_dive_suit/scene.gltf"></a-asset-item>
+
+    </a-assets>
+
+    <!-- Terrain  -->
+    <a-entity 
+      id="island" 
+      gltf-model="#island" 
+      position="0 0 0" 
+      scale="100 100 100">
+    </a-entity>
+
+    <a-entity
+      id="diver" 
+      gltf-model="#diver" 
+      position="-1.5 -1 -0.7" 
+      scale="0.03 0.03 0.03" 
+      rotation="0 -90 0"
+      move-diver
+    ></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
